@@ -444,6 +444,11 @@ p {
     bottom: -660px;
   }
 }
+@media (min-width: 1440px) {
+  .game__win {
+    bottom: -508px;
+  }
+}
 .game__win__message {
   font-size: 3.5rem;
 }

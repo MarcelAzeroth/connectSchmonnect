@@ -458,6 +458,9 @@ p{
         @include tablet{
             bottom: -660px;
         }
+        @include desktop{
+            bottom: -508px;
+        }
 
         &__message{
             font-size: 3.5rem;
