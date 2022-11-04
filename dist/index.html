@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="start">
+        <div class="start__logo">
+            <img class="start__logo__img" src="assets/images/logo.svg" alt="">
+        </div>
+        <button id="start__button__playervsplayer" class="start__play button"><span>Play vs player</span> <img class="start__play__icon" src="assets/images/player-vs-player.svg" alt=""> </button>
+        <button id="start__button__rules" class="start__rules button">Game rules</button>
+    </div>
+    <div class="rules hide">
+        <div class="rules__headline">
+            <h2>RULES</h2>
+        </div>
+        <div class="rules__body">
+            <h3 class="rules__body__headline">OBJECTIVE</h3>
+            <p class="rules__body__paragraph">
+                Be the first player to connect 4 of the same colored discs in a row (either vertically, horizontally, or diagonally).
+            </p>
+            <h3 class="rules__body__headline">HOW TO PLAY</h3>
+            <div class="rules__body__list">
+                <div class="rules__body__list__item">
+                    <p class="rules__body__list__num">1</p>
+                    <p class="rules__body__list__text">
+                        Red goes first in the first game.
+                    </p>
+                </div>
+                <div class="rules__body__list__item">
+                    <p class="rules__body__list__num">2</p>
+                    <p class="rules__body__list__text">
+                        Players must alternate turns, and only one disc can be dropped in each turn.                     
+                    </p>
+                </div>
+                <div class="rules__body__list__item">
+                    <p class="rules__body__list__num">3</p>
+                    <p class="rules__body__list__text">
+                        The game ends when there is a 4-in-a-row or a stalemate.                    
+                    </p>
+                </div>
+                <div class="rules__body__list__item">
+                    <p class="rules__body__list__num">4</p>
+                    <p class="rules__body__list__text">
+                        The starter of the previous game goes second on the next game.                    
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="rules__button">
+            <img class="rules__button_image" src="/dist/assets/images/icon-check.svg" alt="">
+        </div>
+    </div>
+    <main player="player1" class="game hide">
+        <div class="game__header">
+            <button id="menu"class="game__header__button">Menu</button>
+            <img class="game__header__logo" src="assets/images/logo.svg" alt="">
+            <button id="restart" class="game__header__button">Restart</button>
+        </div>
+        <div class="game__score">
+            <div class="game__score__player">
+                <h4>PLAYER 1</h4>
+                <p id="scorePlayer1" class="game__score__player__score">0</p>
+                <img src="assets/images/player-one.svg" alt="" class="game__score__player__icon player1-icon">
+            </div>
+            <div class="game__score__player">
+                <h4>PLAYER 2</h4>
+                <p id="scorePlayer2" class="game__score__player__score">0</p>
+                <img src="assets/images/player-two.svg" alt="" class="game__score__player__icon player2-icon">
+            </div>
+        </div>
+        <div class="game__main">
+            <div class="game__main__bottom">
+                <img class="game__main__bottom__layer" src="assets/images/board-layer-black-small.svg" alt="">
+                <img class="game__main__bottom__layer tablet" src="assets/images/board-layer-black-large.svg" alt="">
+            </div>
+            <div class="game__main__middle click">
+                <div id="1" class="game__main__middle__row"></div>
+                <div id="2" class="game__main__middle__row"></div>
+                <div id="3" class="game__main__middle__row"></div>
+                <div id="4" class="game__main__middle__row"></div>
+                <div id="5" class="game__main__middle__row"></div>
+                <div id="6" class="game__main__middle__row"></div>
+                <div id="7" class="game__main__middle__row"></div>
+            </div>
+            <div class="game__main__middle chip-map">
+                <div id="row1" class="game__main__middle__row target-rows"></div>
+                <div id="row2" class="game__main__middle__row target-rows"></div>
+                <div id="row3" class="game__main__middle__row target-rows"></div>
+                <div id="row4" class="game__main__middle__row target-rows"></div>
+                <div id="row5" class="game__main__middle__row target-rows"></div>
+                <div id="row6" class="game__main__middle__row target-rows"></div>
+                <div id="row7" class="game__main__middle__row target-rows"></div>
+            </div>
+            <div class="game__main__top">
+                <img class="game__main__bottom__layer" src="assets/images/board-layer-white-small.svg" alt="">
+                <img class="game__main__bottom__layer tablet" src="assets/images/board-layer-white-large.svg" alt="">
+            </div>
+        </div>
+        <div class="game__timer">
+            <div class="game__timer__box gametimer-pink">
+                <p class="game__timer__box__playerturn">PLAYER <span class="game__timer__box__num">1</span>'S TURN</p>
+                <p class="game__timer__box__timeleft"><span class="game__timer__box__timeleft__time">30</span>s</p>
+            </div>
+        </div>
+        <div class="game__win hide">
+            <p class="game__win__winner">PLAYER 2</p>
+            <p class="game__win__message">WINS</p>
+            <button class="game__win__button">Play Again</button>
+        </div>
+    </main>
+    <div class="game__pause hide">
+            <div class="game__pause__box">
+                <div class="game__pause__box__headline">
+                    <h2>PAUSE</h2>
+                </div>
+                <div class="game__pause__box__btns">
+                    <button id="continue__game" class="game__pause__box__btns__btn">CONTINUE GAME</button>
+                    <button id="restart__game" class="game__pause__box__btns__btn">RESTART</button>
+                    <button id="quit__game" class="game__pause__box__btns__btn">QUIT GAME</button>
+                </div>
+            </div>
+    </div>
+    <div class="game__shadow hide">
+
+    </div>
+    
+</body>
+</html>
